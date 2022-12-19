@@ -1,0 +1,36 @@
+{
+    "name": "scp-sl-server-info",
+    "version": "2.0.0",
+    "description": "Simple package to get information about your scp secret laboratory server",
+    "main": "build/index.js",
+    "scripts": {
+        "build": "tsc",
+        "build-dev": "tsc -w",
+        "test": "node build/test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lon21/scp-sl-server-info.git"
+    },
+    "author": "lon21",
+    "license": "ISC",
+    "keywords": [
+        "api",
+        "scp",
+        "server",
+        "scp:sl",
+        "scp secret labolatory"
+    ],
+    "bugs": {
+        "url": "https://github.com/lon21/scp-sl-server-info/issues"
+    },
+    "homepage": "https://github.com/lon21/scp-sl-server-info#readme",
+    "dependencies": {
+        "node-fetch": "^2.6.7"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.17",
+        "@types/node-fetch": "^2.6.2",
+        "typescript": "^4.9.4"
+    }
+}
