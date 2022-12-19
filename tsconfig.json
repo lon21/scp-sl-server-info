@@ -14,6 +14,7 @@
             "node_modules/@types"
         ],
         "esModuleInterop": true,
+        "declaration": true,
         "experimentalDecorators": true,
         "allowJs": true,
         "strictNullChecks": false,

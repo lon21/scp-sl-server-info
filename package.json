@@ -3,6 +3,7 @@
     "version": "2.0.0",
     "description": "Simple package to get information about your scp secret laboratory server",
     "main": "build/index.js",
+    "types": "build/index.d.ts",
     "scripts": {
         "build": "tsc",
         "build-dev": "tsc -w",
