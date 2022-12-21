@@ -1,6 +1,6 @@
 {
     "name": "scp-sl-server-info",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Simple package to get information about your scp secret laboratory server",
     "main": "build/index.js",
     "files": ["build", "package.json", "README.md"],
