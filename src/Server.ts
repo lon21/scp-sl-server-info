@@ -1,13 +1,13 @@
-import { DataOptions, ServerInfo } from './index.d';
+import { DataOptions, ServerInfo } from './Interfaces';
 import fetch from 'node-fetch';
 
 export default class Server {
 
 	public readonly getData: (options: DataOptions) => Promise<ServerInfo>;
 
-	private startCooldownTimer: (cooldown: number) => Promise<void>;
+	private readonly startCooldownTimer: (cooldown: number) => Promise<void>;
 	private cooldown: number = 0;
-	private lastData: ServerInfo | null;
+	private lastData?: ServerInfo;
 
 	constructor(ip: string, key: string) {
 		if (!ip) throw new Error('ip is required');
@@ -34,7 +34,7 @@ export default class Server {
 
 			if (this.cooldown !== 0) {
 				if (this.lastData) return resolve(this.lastData);
-				else return reject(new Error('Ratelimit exceeded'));
+				else return reject('Ratelimit exceeded');
 			}
 
 			let baseLink = `https://api.scpslgame.com/serverinfo.php/?ip=${ ip }&key=${ key }`;
@@ -55,9 +55,8 @@ export default class Server {
 			if (data.Error) return reject(data.Error);
 
 			if (options.info) {
-				for await (const server of data.Servers) {
-					server.Info = Buffer.from(server.Info, 'base64').toString();
-				}
+				 data.Servers.map(server => {server.Info = Buffer.from(server.Info, 'base64').toString('utf-8');
+				});
 			}
 			this.cooldown = data.Cooldown;
 			this.lastData = data;

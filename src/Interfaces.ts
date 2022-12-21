@@ -4,15 +4,15 @@ interface Player {
 }
 
 export interface DataOptions {
-	lastOnline: boolean | null;
-	players: boolean | null;
-	playerList: boolean | null;
-	info: boolean | null;
-	pastebin: boolean | null;
-	version: boolean | null;
-	flags: boolean | null;
-	nicknames: boolean | null;
-	online: boolean | null;
+	lastOnline?: boolean;
+	players?: boolean;
+	playerList?: boolean;
+	info?: boolean;
+	pastebin?: boolean;
+	version?: boolean;
+	flags?: boolean;
+	nicknames?: boolean;
+	online?: boolean;
 }
 
 interface Server {
@@ -28,13 +28,13 @@ interface Server {
 	WL: boolean;
 	Modded: boolean;
 	Mods: number;
-	Supress: number;
-	AutoSupress: boolean;
+	Suppress: number;
+	AutoSuppress: boolean;
 }
 
 export interface ServerInfo {
 	Cooldown: number;
 	Success: boolean;
-	Error: string | null;
+	Error?: string;
 	Servers: Server[];
 }

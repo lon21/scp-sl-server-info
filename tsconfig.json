@@ -1,22 +1,22 @@
 {
     "compilerOptions": {
-        "target": "ES6",
+        "target": "ESNext",
         "module": "CommonJS",
-        "lib": [
-            "ES6",
-            "ESNext",
-        ],
         "outDir": "./build",
-        "strict": false,
+        "strict": true,
+        "noEmit": false,
         "moduleResolution": "node",
         "baseUrl": "./src",
+        "noImplicitAny": true,
+
         "typeRoots": [
             "node_modules/@types"
         ],
         "esModuleInterop": true,
         "declaration": true,
         "experimentalDecorators": true,
-        "allowJs": true,
+        "allowJs": false,
+        "forceConsistentCasingInFileNames": true,
         "strictNullChecks": false,
         "strictFunctionTypes": true,
         "noImplicitThis": true,
